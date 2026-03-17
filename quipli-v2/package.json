@@ -1,0 +1,28 @@
+{
+  "name": "quipli-theme",
+  "version": "0.9.0",
+  "description": "Quipli Custom Wordpress Theme built using underscores.",
+  "author": "whatastory.tech",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "WordPress",
+    "Theme",
+    "Custom"
+  ],
+  "homepage": "https://quipli.com",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-webp": "^4.0.1",
+    "imagemin-webp": "^8.0.0",
+    "sass": "^1.62.1"
+  },
+  "scripts": {
+    "dev": "code ./styles/sass/_global.scss && gulp watch",
+    "build": "gulp optimizeImages"
+  }
+}

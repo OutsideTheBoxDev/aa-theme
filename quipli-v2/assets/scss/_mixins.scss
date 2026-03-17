@@ -1,0 +1,116 @@
+// breakpoints
+
+$XS: 480px;
+$SM: 600px;
+$MD: 768px;
+$MID: 900px;
+$LG: 1100px;
+$XL: 1280px;
+$XXL: 1320px;
+$SCREEN: 1536px;
+$SCREENXL: 1920px;
+
+// media queries
+
+@mixin MQ($canvas) {
+  @if $canvas == XS {
+    @media only screen and (min-width: $XS) {
+      @content;
+    }
+  } @else if $canvas == SM {
+    @media only screen and (min-width: $SM) {
+      @content;
+    }
+  } @else if $canvas == MD {
+    @media only screen and (min-width: $MD) {
+      @content;
+    }
+  } @else if $canvas == MID {
+    @media only screen and (min-width: $MID) {
+      @content;
+    }
+  } @else if $canvas == LG {
+    @media only screen and (min-width: $LG) {
+      @content;
+    }
+  } @else if $canvas == LG {
+    @media only screen and (min-width: $LG) {
+      @content;
+    }
+  } @else if $canvas == XL {
+    @media only screen and (min-width: $XL) {
+      @content;
+    }
+  } @else if $canvas == XXL {
+    @media only screen and (min-width: $XXL) {
+      @content;
+    }
+  } @else if $canvas == SCREEN {
+    @media only screen and (min-width: $SCREEN) {
+      @content;
+    }
+  } @else if $canvas == SCREENXL {
+    @media only screen and (min-width: $SCREENXL) {
+      @content;
+    }
+  }
+}
+
+// super light grid system
+
+@mixin column($percentage, $float-direction: left) {
+  width: 100% * $percentage;
+  float: $float-direction;
+}
+
+// center vertically and/or horizontally an absolute positioned element
+
+@mixin center($xy: xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+  } @else if $xy == x {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  } @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}
+
+// border radius
+
+@mixin border-radius($radius: 0.25em) {
+  border-radius: $radius;
+}
+
+// antialiasing mode font rendering
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// clearfix
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+// color tint and shade
+
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+@function tint($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}
